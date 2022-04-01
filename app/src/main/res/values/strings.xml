@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Layanan Mandiri Desa Tanggung</string>
+    <string name="zero_text"> </string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="setting">Setting</string>
+    <string name="back_again_to_exit">Kembali dua kali untuk keluar</string>
+    <string name="layanan_mandiri">Layanan Mandiri</string>
+    <string name="image">image</string>
+    <string name="sinergi_program">Sinergi Program</string>
+
+</resources>
