@@ -28,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
 
         GlobalScope.launch {
             delay(2500)
-            val intent = Intent(this@SplashActivity, HomeActivity::class.java)
+            val intent = Intent(this@SplashActivity, SliderActivity::class.java)
             startActivity(intent)
             finishAffinity()
         }

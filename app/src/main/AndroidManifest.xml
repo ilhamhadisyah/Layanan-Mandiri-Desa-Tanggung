@@ -24,7 +24,7 @@
         android:theme="@style/Theme.LayananMandiriDesaTanggung">
         <activity
             android:name=".ui.SliderActivity"
-            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar"
+            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar.Start"
             android:exported="true" >
 
         </activity>

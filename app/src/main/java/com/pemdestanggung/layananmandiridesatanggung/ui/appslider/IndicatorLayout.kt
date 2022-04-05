@@ -50,12 +50,12 @@ class IndicatorLayout : LinearLayout {
             for (index in 0 until indicatorCount) {
                 val indicator = getChildAt(index)
                 if (index == selectedPosition) {
-                    val layoutParams = LayoutParams(px(50f), px(10f))
+                    val layoutParams = LayoutParams(px(20f), px(7f))
                     layoutParams.setMargins(px(3f), px(3f), px(3f), px(3f))
                     indicator.layoutParams = layoutParams
                     indicator.setBackgroundResource(R.drawable.indicator_selected)
                 } else {
-                    val layoutParams = LayoutParams(px(10f), px(10f))
+                    val layoutParams = LayoutParams(px(7f), px(7f))
                     layoutParams.setMargins(px(3f), px(3f), px(3f), px(3f))
                     indicator.layoutParams = layoutParams
                     indicator.setBackgroundResource(R.drawable.indicator_unselected)
