@@ -1,5 +1,6 @@
 package com.pemdestanggung.layananmandiridesatanggung.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -11,6 +12,7 @@ import android.os.Looper
 import android.provider.Settings
 import android.view.KeyEvent
 import android.webkit.*
+import android.widget.ProgressBar
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.pemdestanggung.layananmandiridesatanggung.customui.Progress
@@ -20,13 +22,14 @@ import com.pemdestanggung.layananmandiridesatanggung.utils.NetworkHelper.isOnlin
 
 class WebViewActivity : AppCompatActivity() {
 
-    private var progress : Progress? = null
+//    private var progress : Progress? = null
+    private var progressBar : ProgressBar? = null
     private var isLoaded : Boolean = false
-    private var doubleClickToExitPressedOnce= false
-    private var url :String? = "https://pemdestanggung.com/"
+    private var url :String? = ""
 
     private lateinit var binding : ActivityWebViewBinding
 
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityWebViewBinding.inflate(layoutInflater)
@@ -39,7 +42,9 @@ class WebViewActivity : AppCompatActivity() {
             javaScriptCanOpenWindowsAutomatically=true
             supportMultipleWindows()
         }
-        progress = Progress(this, R.string.zero_text,true)
+        url = intent.getStringExtra("EXTRA_URL")
+//        progress = Progress(this, R.string.zero_text,true)
+        progressBar = ProgressBar(this,null)
         if (!isOnline(this)){
             showToast(getString(R.string.no_internet))
             showNoNetSnackBar()
@@ -106,7 +111,8 @@ class WebViewActivity : AppCompatActivity() {
     }
 
     private fun showProgress(visible: Boolean) {
-        progress?.apply { if (visible) show() else dismiss() }
+//        progress?.apply { if (visible) show() else dismiss() }
+
     }
 
     private fun showToast(message: String) {
@@ -122,32 +128,4 @@ class WebViewActivity : AppCompatActivity() {
         snack.show()
     }
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
-        if (event.action == KeyEvent.ACTION_DOWN) {
-            if (keyCode == KeyEvent.KEYCODE_BACK) {
-                if (binding.webView.canGoBack()) {
-                    binding.webView.goBack()
-                } else {
-                    showToastToExit()
-                }
-                return true
-            }
-        }
-        return super.onKeyDown(keyCode, event)
-    }
-
-    private fun showToastToExit() {
-        when {
-            doubleClickToExitPressedOnce -> {
-                onBackPressed()
-            }
-            else -> {
-                doubleClickToExitPressedOnce = true
-                showToast(getString(R.string.back_again_to_exit))
-                Handler(Looper.myLooper()!!).postDelayed(
-                    { doubleClickToExitPressedOnce = false },
-                    2000)
-            }
-        }
-    }
 }

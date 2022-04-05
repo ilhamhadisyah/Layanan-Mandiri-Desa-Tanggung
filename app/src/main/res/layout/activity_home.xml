@@ -99,6 +99,7 @@
             android:layout_height="match_parent"
             android:clickable="true"
             app:cardCornerRadius="0dp"
+            android:id="@+id/login_layanan_mandiri"
             android:focusable="true">
             <TextView
                 android:layout_gravity="center"
@@ -116,6 +117,7 @@
             android:layout_weight="1"
             app:cardBackgroundColor="@color/primary_color"
             android:layout_height="match_parent"
+            android:id="@+id/login_admin"
             android:clickable="true"
             android:focusable="true">
             <TextView

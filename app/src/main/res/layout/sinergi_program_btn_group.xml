@@ -20,7 +20,8 @@
             android:clickable="true"
             android:focusable="true"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:id="@+id/posyandu_btn"
+            android:layout_margin="15dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="3dp">
 
@@ -49,8 +50,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             app:cardCornerRadius="15dp"
+            android:id="@+id/bpjs_btn"
             android:clickable="true"
             android:focusable="true"
             app:cardElevation="3dp">
@@ -80,7 +82,8 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
+            android:id="@+id/kemensos_btn"
             android:clickable="true"
             android:focusable="true"
             app:cardCornerRadius="15dp"
@@ -99,7 +102,6 @@
         android:id="@+id/view4"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintDimensionRatio="1:1"
@@ -111,7 +113,8 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
+            android:id="@+id/peduli_lindungi_btn"
             android:clickable="true"
             android:focusable="true"
             app:cardCornerRadius="15dp"
@@ -130,7 +133,6 @@
         android:id="@+id/view5"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintDimensionRatio="1:1"
@@ -142,10 +144,11 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:clickable="true"
             android:focusable="true"
             app:cardCornerRadius="15dp"
+            android:id="@+id/sim_pbb_btn"
             app:cardElevation="3dp">
 
             <ImageView

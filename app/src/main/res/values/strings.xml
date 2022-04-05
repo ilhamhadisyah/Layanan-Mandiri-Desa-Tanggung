@@ -7,5 +7,7 @@
     <string name="layanan_mandiri">Layanan Mandiri</string>
     <string name="image">image</string>
     <string name="sinergi_program">Sinergi Program</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

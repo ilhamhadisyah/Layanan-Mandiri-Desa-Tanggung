@@ -21,17 +21,12 @@ class Progress constructor(
 
     init {
         view = LayoutInflater.from(context).inflate(R.layout.progress, null)
-        view?.findViewById<TextView>(R.id.text)?.setText(titleRes)
         builder = AlertDialog.Builder(context)
         builder.setView(view)
         dialog = builder.create()
         dialog.setCancelable(cancelable)
 
 
-    }
-
-    fun setProgressMessage(@StringRes titleRes: Int) {
-        view?.findViewById<TextView>(R.id.text)?.setText(titleRes)
     }
 
     fun show() {

@@ -1,37 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.pemdestanggung.layananmandiridesatanggung">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <queries>
+        <package android:name="com.telkom.tracencare" />
+        <package android:name="com.whatsapp" />
+        <package android:name="com.android.vending" />
+    </queries>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/layanan_mandiri"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LayananMandiriDesaTanggung" >
+        android:theme="@style/Theme.LayananMandiriDesaTanggung">
         <activity
-            android:name=".ui.SplashActivity"
-            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar.Start"
-            android:exported="true" >
-
-        </activity>
-        <activity
-            android:name=".ui.WebViewActivity"
-            android:exported="true" >
-
-        </activity>
-        <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.SliderActivity"
             android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar"
             android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar.Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.WebViewActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".ui.HomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar">
+
         </activity>
 
         <meta-data
