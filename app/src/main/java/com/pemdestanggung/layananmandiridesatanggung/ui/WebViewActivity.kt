@@ -22,7 +22,7 @@ import com.pemdestanggung.layananmandiridesatanggung.utils.NetworkHelper.isOnlin
 
 class WebViewActivity : AppCompatActivity() {
 
-//    private var progress : Progress? = null
+    private var progress : Progress? = null
     private var progressBar : ProgressBar? = null
     private var isLoaded : Boolean = false
     private var url :String? = ""
@@ -43,7 +43,7 @@ class WebViewActivity : AppCompatActivity() {
             supportMultipleWindows()
         }
         url = intent.getStringExtra("EXTRA_URL")
-//        progress = Progress(this, R.string.zero_text,true)
+        progress = Progress(this, R.string.zero_text,true)
         progressBar = ProgressBar(this,null)
         if (!isOnline(this)){
             showToast(getString(R.string.no_internet))
@@ -111,7 +111,7 @@ class WebViewActivity : AppCompatActivity() {
     }
 
     private fun showProgress(visible: Boolean) {
-//        progress?.apply { if (visible) show() else dismiss() }
+        progress?.apply { if (visible) show() else dismiss() }
 
     }
 

@@ -69,7 +69,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
                 loadWebView("https://pemdestanggung.com/layanan-mandiri/arsip-surat")
             }
             R.id.bantuan_btn -> {
-                loadWebView("https://pemdestanggung.com/siteman")
+                loadWebView("https://pemdestanggung.com/layanan-mandiri/bantuan")
             }
             R.id.posyandu_btn -> {
                 loadWebView("https://posyandu.pemdestanggung.com/login")
