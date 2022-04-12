@@ -3,6 +3,8 @@ package com.pemdestanggung.layananmandiridesatanggung.customui
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
@@ -24,6 +26,7 @@ class Progress constructor(
         builder = AlertDialog.Builder(context)
         builder.setView(view)
         dialog = builder.create()
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.setCancelable(cancelable)
 
 
@@ -39,7 +42,7 @@ class Progress constructor(
         }
     }
 
-    fun setProgressDialogVisibility(isVisible: Boolean) {
-
-    }
+//    fun setProgressDialogVisibility(isVisible: Boolean) {
+//
+//    }
 }

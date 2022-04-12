@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.maps.GoogleMap
 import com.google.android.material.shape.CornerFamily
 import com.pemdestanggung.layananmandiridesatanggung.R
 import com.pemdestanggung.layananmandiridesatanggung.customui.MaterialCardCustomCorner
@@ -18,6 +19,8 @@ import java.lang.NullPointerException
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
+
+    private lateinit var mMap : GoogleMap
     private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,6 +57,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             loginAdmin.setOnClickListener(this@HomeActivity)
             loginLayananMandiri.setOnClickListener(this@HomeActivity)
         }
+
+        val mapFragment = supportFragmentManager
     }
 
 
