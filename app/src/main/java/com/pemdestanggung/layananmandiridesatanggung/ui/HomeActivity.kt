@@ -9,11 +9,17 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.shape.CornerFamily
 import com.pemdestanggung.layananmandiridesatanggung.R
 import com.pemdestanggung.layananmandiridesatanggung.customui.MaterialCardCustomCorner
 import com.pemdestanggung.layananmandiridesatanggung.databinding.ActivityHomeBinding
+import com.pemdestanggung.layananmandiridesatanggung.utils.MapController
 import java.lang.NullPointerException
 
 
@@ -59,6 +65,8 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         val mapFragment = supportFragmentManager
+            .findFragmentById(R.id.map_view) as SupportMapFragment
+        mapFragment.getMapAsync(MapController())
     }
 
 

@@ -42,11 +42,7 @@
             android:name=".utils.MapsPreviewActivity"
             android:exported="true"
             android:label="@string/title_activity_maps_preview" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.SliderActivity"
@@ -56,7 +52,11 @@
             android:name=".ui.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar.Start">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.WebViewActivity"
