@@ -1,38 +1,41 @@
-package com.pemdestanggung.layananmandiridesatanggung.ui
+package com.pemdestanggung.layananmandiridesatanggung.ui.home
 
-import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.Intent.*
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.shape.CornerFamily
 import com.pemdestanggung.layananmandiridesatanggung.R
 import com.pemdestanggung.layananmandiridesatanggung.customui.MaterialCardCustomCorner
+import com.pemdestanggung.layananmandiridesatanggung.data.datasource.network.ApiClient
+import com.pemdestanggung.layananmandiridesatanggung.data.datasource.network.ApiHelper
 import com.pemdestanggung.layananmandiridesatanggung.databinding.ActivityHomeBinding
+import com.pemdestanggung.layananmandiridesatanggung.ui.WebViewActivity
 import com.pemdestanggung.layananmandiridesatanggung.utils.MapController
+import com.pemdestanggung.layananmandiridesatanggung.utils.Status
+import com.pemdestanggung.layananmandiridesatanggung.utils.ViewModelFactory
 import java.lang.NullPointerException
 
 
 class HomeActivity : AppCompatActivity(), View.OnClickListener {
 
-
-    private lateinit var mMap : GoogleMap
     private lateinit var binding: ActivityHomeBinding
+    private lateinit var viewModel: HomeViewModel
+    private lateinit var adapter: ArticleAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupViewModel()
+        setUpAdapter()
+        observeArticles()
 
         binding.imageContainer.shapeAppearanceModel =
             binding
@@ -62,6 +65,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         binding.apply {
             loginAdmin.setOnClickListener(this@HomeActivity)
             loginLayananMandiri.setOnClickListener(this@HomeActivity)
+        }
+        binding.apply {
+            lapakDesaBtn.setOnClickListener(this@HomeActivity)
+            beritaDesa.setOnClickListener(this@HomeActivity)
         }
 
         val mapFragment = supportFragmentManager
@@ -105,6 +112,12 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.login_admin -> {
                 loadWebView("https://pemdestanggung.com/siteman")
             }
+            R.id.lapak_desa_btn -> {
+                loadWebView("https://pemdestanggung.com/lapak")
+            }
+            R.id.berita_desa -> {
+                loadWebView("https://pemdestanggung.com/artikel/kategori/berita-desa")
+            }
         }
     }
 
@@ -114,6 +127,36 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         startActivity(intent)
     }
 
+    private fun setupViewModel(){
+        viewModel = ViewModelProviders.of(this,
+            ViewModelFactory(ApiHelper(ApiClient.apiService)))[HomeViewModel::class.java]
+    }
+
+    private fun observeArticles(){
+        viewModel.getArticles().observe(this){
+            it?.let { resources ->
+                when(resources.status){
+                    Status.ERROR->{}
+                    Status.LOADING->{}
+                    Status.SUCCESS->{resources.data.let { articleData->
+                        adapter.apply {
+                            addUsers(articleData?.data!!)
+                            notifyDataSetChanged()
+                        }
+                    }}
+                }
+            }
+        }
+    }
+    private fun setUpAdapter(){
+        binding.apply {
+            rvArtikel.layoutManager = LinearLayoutManager(this@HomeActivity,LinearLayoutManager.HORIZONTAL,false)
+            adapter = ArticleAdapter(arrayListOf())
+            rvArtikel.adapter = adapter
+        }
+    }
+
+
     private fun openApp(packageName: String) {
         val intent = packageManager.getLaunchIntentForPackage(packageName)
 
@@ -121,7 +164,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             intent?.action = ACTION_VIEW
             intent?.addFlags(FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
-        }catch (e : NullPointerException){
+        } catch (e: NullPointerException) {
             val playStoreIntent = Intent(ACTION_VIEW)
             playStoreIntent.addFlags(FLAG_ACTIVITY_NEW_TASK)
             playStoreIntent.data = Uri.parse("market://details?id=$packageName")

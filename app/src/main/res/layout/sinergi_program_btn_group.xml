@@ -16,12 +16,12 @@
         app:layout_constraintWidth_percent="0.3">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/posyandu_btn"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
             android:clickable="true"
             android:focusable="true"
-            android:layout_height="match_parent"
-            android:id="@+id/posyandu_btn"
-            android:layout_margin="15dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="3dp">
 
@@ -48,13 +48,13 @@
         app:layout_constraintWidth_percent="0.3">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bpjs_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="15dp"
-            app:cardCornerRadius="15dp"
-            android:id="@+id/bpjs_btn"
             android:clickable="true"
             android:focusable="true"
+            app:cardCornerRadius="15dp"
             app:cardElevation="3dp">
 
             <ImageView
@@ -80,10 +80,10 @@
         app:layout_constraintWidth_percent="0.3">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/kemensos_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="15dp"
-            android:id="@+id/kemensos_btn"
             android:clickable="true"
             android:focusable="true"
             app:cardCornerRadius="15dp"
@@ -111,10 +111,10 @@
         app:layout_constraintWidth_percent="0.3">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/peduli_lindungi_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="15dp"
-            android:id="@+id/peduli_lindungi_btn"
             android:clickable="true"
             android:focusable="true"
             app:cardCornerRadius="15dp"
@@ -142,13 +142,13 @@
         app:layout_constraintWidth_percent="0.3">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/sim_pbb_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="15dp"
             android:clickable="true"
             android:focusable="true"
             app:cardCornerRadius="15dp"
-            android:id="@+id/sim_pbb_btn"
             app:cardElevation="3dp">
 
             <ImageView
@@ -162,9 +162,9 @@
 
     <TextView
         android:id="@+id/textView"
-        android:fontFamily="@font/poppins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:text="Posyandu"
         app:layout_constraintEnd_toEndOf="@+id/view1"
         app:layout_constraintStart_toStartOf="@+id/view1"
@@ -172,9 +172,9 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:fontFamily="@font/poppins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
         android:text="BPJS"
         app:layout_constraintEnd_toEndOf="@id/view2"
         app:layout_constraintStart_toStartOf="@+id/view2"
@@ -183,8 +183,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kemensos"
         android:fontFamily="@font/poppins"
+        android:text="Kemensos"
         app:layout_constraintEnd_toEndOf="@+id/view3"
         app:layout_constraintStart_toStartOf="@+id/view3"
         app:layout_constraintTop_toBottomOf="@+id/view3" />
@@ -192,8 +192,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Peduli Lindungi"
         android:fontFamily="@font/poppins"
+        android:text="Peduli Lindungi"
         app:layout_constraintEnd_toEndOf="@+id/view4"
         app:layout_constraintStart_toStartOf="@+id/view4"
         app:layout_constraintTop_toBottomOf="@+id/view4" />

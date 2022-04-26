@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeActivity">
+    tools:context=".ui.home.HomeActivity">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -67,6 +67,54 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/poppins_medium"
+                    android:text="Berita Desa"
+                    android:textSize="20sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_artikel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <com.hadisyah.verticaliconbutton.VerticalIconButton
+                        android:id="@+id/lapak_desa_btn"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:n_button_background_color_normal="@color/green_btn"
+                        app:n_button_text="Lapak Desa"
+                        app:n_button_text_size="6dp"
+                        app:n_icon="@drawable/ic_baseline_storefront_24" />
+
+                    <com.hadisyah.verticaliconbutton.VerticalIconButton
+                        android:id="@+id/berita_desa"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        app:n_button_background_color_normal="@color/red_btn"
+                        app:n_button_text="Berita Desa"
+                        app:n_button_text_size="6dp"
+                        app:n_icon="@drawable/ic_baseline_book_24" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="@string/sinergi_program"
                     android:textSize="20sp" />
 
@@ -86,9 +134,9 @@
                 <fragment
                     android:id="@+id/map_view"
                     android:name="com.google.android.gms.maps.SupportMapFragment"
-                    android:layout_margin="20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"/>
+                    android:layout_height="300dp"
+                    android:layout_margin="20dp" />
 
                 <View
                     android:layout_width="match_parent"

@@ -8,17 +8,22 @@
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/drawable-v24/indicator_unselected.xml" value="0.1" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/drawable/ic_arsip_surat_icon.xml" value="0.126" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/drawable/ic_bantuan_icon.xml" value="0.195" />
+        <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.167" />
+        <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/drawable/ic_logo_kabupaten_malang.xml" value="0.167" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/drawable/ic_permohonan_surat_icon.xml" value="0.195" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/drawable/ic_slide_1.xml" value="0.1" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/drawable/ic_slide_2.xml" value="0.1" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/drawable/ic_slide_3.xml" value="0.1" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/font/poppins.xml" value="0.18888888888888888" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout-v28/layanan_mandiri_button_group.xml" value="0.1" />
+        <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout/activity_article_reader.xml" value="0.14" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout/activity_maps_preview.xml" value="0.10170940170940171" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout/activity_slider.xml" value="0.25" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout/activity_splash.xml" value="0.2" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout/activity_web_view.xml" value="0.2" />
+        <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout/article_item.xml" value="0.25" />
+        <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout/article_item_horizonrtal.xml" value="0.25" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout/fragment_first_page.xml" value="0.1" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout/layanan_mandiri_button_group.xml" value="0.2" />
         <entry key="..\:/android/LayananMandiriDesaTanggung/app/src/main/res/layout/progress.xml" value="0.13" />

@@ -22,7 +22,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LayananMandiriDesaTanggung">
-
+        <activity
+            android:parentActivityName=".ui.home.HomeActivity"
+            android:name=".ui.ArticleReaderActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -41,13 +44,11 @@
         <activity
             android:name=".utils.MapsPreviewActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps_preview" >
-
-        </activity>
+            android:label="@string/title_activity_maps_preview"></activity>
         <activity
             android:name=".ui.SliderActivity"
             android:exported="true"
-            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar.Start"></activity>
+            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar.Start" />
         <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
@@ -61,11 +62,11 @@
         <activity
             android:name=".ui.WebViewActivity"
             android:exported="true"
-            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar"></activity>
+            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar" />
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar"></activity>
+            android:theme="@style/Theme.LayananMandiriDesaTanggung.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"

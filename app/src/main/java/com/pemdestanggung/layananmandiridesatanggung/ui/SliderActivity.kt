@@ -12,6 +12,7 @@ import com.pemdestanggung.layananmandiridesatanggung.ui.appslider.SliderAdapter
 import com.pemdestanggung.layananmandiridesatanggung.ui.appslider.sliderfragment.Slide_1_Fragment
 import com.pemdestanggung.layananmandiridesatanggung.ui.appslider.sliderfragment.Slide_2_Fragment
 import com.pemdestanggung.layananmandiridesatanggung.ui.appslider.sliderfragment.Slide_3_Fragment
+import com.pemdestanggung.layananmandiridesatanggung.ui.home.HomeActivity
 import com.pemdestanggung.layananmandiridesatanggung.utils.PreferenceManager
 
 class SliderActivity : AppCompatActivity() ,View.OnClickListener{

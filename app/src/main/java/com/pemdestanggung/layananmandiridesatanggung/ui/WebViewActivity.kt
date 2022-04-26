@@ -19,6 +19,7 @@ import com.pemdestanggung.layananmandiridesatanggung.customui.Progress
 import com.pemdestanggung.layananmandiridesatanggung.R
 import com.pemdestanggung.layananmandiridesatanggung.databinding.ActivityWebViewBinding
 import com.pemdestanggung.layananmandiridesatanggung.utils.NetworkHelper.isOnline
+import java.lang.Exception
 
 class WebViewActivity : AppCompatActivity() {
 
@@ -84,6 +85,17 @@ class WebViewActivity : AppCompatActivity() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 isLoaded = true
                 showProgress(false)
+
+                try {
+                    view?.loadUrl("javascript:(function() { " +
+                            "var head = document.getElementsByTagName('header')[0];"
+                            + "head.parentNode.removeChild(head);" +
+                            "})()")
+                } catch (e : Exception){
+
+                }
+
+
                 super.onPageFinished(view, url)
             }
 
