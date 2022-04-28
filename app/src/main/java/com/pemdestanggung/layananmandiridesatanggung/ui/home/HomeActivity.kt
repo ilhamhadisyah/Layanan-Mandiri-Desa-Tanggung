@@ -16,6 +16,7 @@ import com.pemdestanggung.layananmandiridesatanggung.customui.MaterialCardCustom
 import com.pemdestanggung.layananmandiridesatanggung.data.datasource.network.ApiClient
 import com.pemdestanggung.layananmandiridesatanggung.data.datasource.network.ApiHelper
 import com.pemdestanggung.layananmandiridesatanggung.databinding.ActivityHomeBinding
+import com.pemdestanggung.layananmandiridesatanggung.ui.NewsActivity
 import com.pemdestanggung.layananmandiridesatanggung.ui.WebViewActivity
 import com.pemdestanggung.layananmandiridesatanggung.utils.MapController
 import com.pemdestanggung.layananmandiridesatanggung.utils.Status
@@ -69,6 +70,7 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         binding.apply {
             lapakDesaBtn.setOnClickListener(this@HomeActivity)
             beritaDesa.setOnClickListener(this@HomeActivity)
+            expandArticles.setOnClickListener(this@HomeActivity)
         }
 
         val mapFragment = supportFragmentManager
@@ -118,6 +120,10 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
             R.id.berita_desa -> {
                 loadWebView("https://pemdestanggung.com/artikel/kategori/berita-desa")
             }
+            R.id.expand_articles -> {
+                val intent = Intent(this, NewsActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
@@ -127,30 +133,36 @@ class HomeActivity : AppCompatActivity(), View.OnClickListener {
         startActivity(intent)
     }
 
-    private fun setupViewModel(){
-        viewModel = ViewModelProviders.of(this,
-            ViewModelFactory(ApiHelper(ApiClient.apiService)))[HomeViewModel::class.java]
+    private fun setupViewModel() {
+        viewModel = ViewModelProviders.of(
+            this,
+            ViewModelFactory(ApiHelper(ApiClient.apiService))
+        )[HomeViewModel::class.java]
     }
 
-    private fun observeArticles(){
-        viewModel.getArticles().observe(this){
+    private fun observeArticles() {
+        viewModel.getArticles().observe(this) {
             it?.let { resources ->
-                when(resources.status){
-                    Status.ERROR->{}
-                    Status.LOADING->{}
-                    Status.SUCCESS->{resources.data.let { articleData->
-                        adapter.apply {
-                            addUsers(articleData?.data!!)
-                            notifyDataSetChanged()
+                when (resources.status) {
+                    Status.ERROR -> {}
+                    Status.LOADING -> {}
+                    Status.SUCCESS -> {
+                        resources.data.let { articleData ->
+                            adapter.apply {
+                                addUsers(articleData?.data!!)
+                                notifyDataSetChanged()
+                            }
                         }
-                    }}
+                    }
                 }
             }
         }
     }
-    private fun setUpAdapter(){
+
+    private fun setUpAdapter() {
         binding.apply {
-            rvArtikel.layoutManager = LinearLayoutManager(this@HomeActivity,LinearLayoutManager.HORIZONTAL,false)
+            rvArtikel.layoutManager =
+                LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL, false)
             adapter = ArticleAdapter(arrayListOf())
             rvArtikel.adapter = adapter
         }

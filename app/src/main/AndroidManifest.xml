@@ -23,9 +23,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LayananMandiriDesaTanggung">
         <activity
+            android:name=".ui.NewsActivity"
             android:parentActivityName=".ui.home.HomeActivity"
-            android:name=".ui.ArticleReaderActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.ArticleReaderActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.home.HomeActivity" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -44,7 +48,7 @@
         <activity
             android:name=".utils.MapsPreviewActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps_preview"></activity>
+            android:label="@string/title_activity_maps_preview" />
         <activity
             android:name=".ui.SliderActivity"
             android:exported="true"
